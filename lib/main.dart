@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'pages/login_page.dart'; 
 import 'package:hungry_people/themes/theme_provider.dart'; 
 import 'package:provider/provider.dart';
+import 'package:hungry_people/auth/login_or_register.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp( 
       debugShowCheckedModeBanner: false,
-      home: LoginPage(
-        onTap: () {}, 
-      ), 
+      home: const LoginOrRegister(), 
       theme: Provider.of<ThemeProvider>(context).themeData, 
     );     
   }
