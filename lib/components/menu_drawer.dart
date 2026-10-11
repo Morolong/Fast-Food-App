@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hungry_people/components/menu_drawer_tile.dart';
+import 'package:hungry_people/components/settings_page.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
@@ -35,7 +36,15 @@ class MenuDrawer extends StatelessWidget {
           MenuDrawerTile(
             text: "S E T T I N G S", 
             icon: Icons.settings, 
-            onTap: () {},  
+                        onTap: () {
+              Navigator.pop(context); 
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => const SettingsPage(),
+                )
+              );
+            }, 
           ),
 
           const Spacer(),
@@ -43,7 +52,7 @@ class MenuDrawer extends StatelessWidget {
             MenuDrawerTile(
             text: "L O G  O U T", 
             icon: Icons.logout, 
-            onTap: () {},  
+           onTap: () {},   
           ),
 
           const SizedBox(height: 25),
